@@ -174,5 +174,6 @@ def main():
                 path_new = path + '\\' + direct
                 Entrys(path_new)
 
+
 if __name__ == "__main__":
     main()
