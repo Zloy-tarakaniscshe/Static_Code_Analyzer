@@ -162,14 +162,17 @@ def Entrys(path):
                     break
 
 # Консольный ввод пути к проверяемому одному или нескольким файлам
+def main():
+    path = argv[1]
+    file = os.path.split(path)
+    if '.py' in file[1]:
+        Entrys(path)
+    else:
+        directory_file = os.listdir(path)
+        for direct in directory_file:
+            if '.py' in direct and 'tests.py' != direct:
+                path_new = path + '\\' + direct
+                Entrys(path_new)
 
-path = argv[1]
-file = os.path.split(path)
-if '.py' in file[1]:
-    Entrys(path)
-else:
-    directory_file = os.listdir(path)
-    for direct in directory_file:
-        if '.py' in direct and 'tests.py' != direct:
-            path_new = path + '\\' + direct
-            Entrys(path_new)
+if __name__ == "__main__":
+    main()
